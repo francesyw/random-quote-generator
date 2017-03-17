@@ -2,20 +2,17 @@ $( document ).ready( readyFn );
 
 function readyFn(jQuery) {
 
-	const API_URL = "http://api.forismatic.com/api/1.0/";
+	const API_URL = "https://crossorigin.me/http://api.forismatic.com/api/1.0/";
 
 	$("#getQuote").on("click", function(){
 
 		var jqxhr = $.ajax({
 			url: API_URL,
-			dataType: "jsonp",
-			jsonp: false,
-			jsonpCallback: "callback",
+			dataType: "json",
 			data: {
 				method: "getQuote",
-				format: "jsonp",
+				format: "json",
 				lang: "en",
-				jsonp: "callback"
 			}
 		})
 			.done(function(data) {
