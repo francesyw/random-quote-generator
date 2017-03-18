@@ -3,12 +3,26 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Thought for the Day</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 	<script src="script.js"></script>
 </head>
+
 <body>
-	<h3 id="quote">Quote Goes Here!</h3>
-	<h4 id="author"></h4>
-	<button id="getQuote">Get Quote</button>
+	<main>
+		<article>
+			<h1 class="quote-text">Quote Goes Here!</h1>
+			<h2 class="quote-author">Author</h2>
+		</article>
+		<aside class="social-links">
+			<div class="tweet-btn">twitter icon</div>
+		</aside>
+		<section class="get-quote stick-to-bottom">
+			<button class="new-btn">Get Quote</button>
+		</section>
+	</main>
+	<footer class="stick-to-bottom">
+		<div class="credit">made by <a href="https://github.com/francesyw" target="_blank">francesyw</a></div>
+	</footer>
 </body>
 </html>
