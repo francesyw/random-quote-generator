@@ -9,19 +9,26 @@
 </head>
 
 <body>
-	<main>
-		<article>
-			<h1 class="quote-text">Quote Goes Here!</h1>
-			<h2 class="quote-author">Author</h2>
-		</article>
-		<aside class="social-links">
-			<div class="tweet-btn">twitter icon</div>
+	<main role="main">
+		<aside>
+			<ul class="social-links">
+				<li>facebook</li>
+				<li>twitter</li>
+				<li>tumblr</li>
+				<li>linkedin</li>
+			</ul>
 		</aside>
-		<section class="get-quote stick-to-bottom">
-			<button class="new-btn">Get Quote</button>
-		</section>
+		<article>
+			<div class="quote-body">
+				<h1 class="quote-text"></h1>
+				<h2 class="quote-author"></h2>
+			</div>
+		</article>
+		<div class="get-quote stick-to-bottom">
+			<button class="new-btn" aria-label="get a new quote">Get Quote</button>
+		</div>
 	</main>
-	<footer class="stick-to-bottom">
+	<footer class="stick-to-bottom" role="contentinfo">
 		<div class="credit">made by <a href="https://github.com/francesyw" target="_blank">francesyw</a></div>
 	</footer>
 </body>
