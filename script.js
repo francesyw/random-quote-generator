@@ -1,4 +1,4 @@
-const API_URL = "https://crossorigin.me/http://api.forismatic.com/api/1.0/";
+const API_URL = "http://api.forismatic.com/api/1.0/";
 
 $( document ).ready( readyFn );
 
@@ -13,11 +13,14 @@ function readyFn(jQuery) {
 function getQuote() {
 	var jqxhr = $.ajax({
 		url: API_URL,
-		dataType: "json",
+		dataType: "jsonp",
+		jsonp: false,
+		jsonpCallback: "callback",
 		data: {
 			method: "getQuote",
-			format: "json",
-			lang: "en"
+			format: "jsonp",
+			lang: "en",
+			jsonp: "callback"
 		}
 	})
 		.done(function(data) {
