@@ -1,15 +1,15 @@
 const API_URL = "http://api.forismatic.com/api/1.0/";
+var launch = true;
+var articleHeight;
 
 $( document ).ready( readyFn );
 
 function readyFn(jQuery) {
-
 	getQuote();
-
-	$(".new-btn").on("click", getQuote);
-
+	$(".new-btn i").on("click", getQuote);
 };
 
+// Get random quotes from api
 function getQuote() {
 	var jqxhr = $.ajax({
 		url: API_URL,
@@ -29,5 +29,25 @@ function getQuote() {
 			var $author = data.quoteAuthor;
 			$(".quote-text").text($quote);
 			$(".quote-author").text("- " + $author);
+			$(".quote-body").hide().fadeIn(1500);
+
+			borderAnimation();
 		})
 };
+
+// Animate the height of article
+function borderAnimation() {
+	var $newArticleHeight = $(".quote-body").height();
+	if (launch) {
+		articleHeight = $("article").height();
+		launch = false;
+	} else {
+		$("article").css("height", articleHeight);
+		$("article").animate({
+			"height": $newArticleHeight
+		}, 900, function() {
+			$("article").css("height", "auto");
+		});
+	}
+	articleHeight = $newArticleHeight;
+}

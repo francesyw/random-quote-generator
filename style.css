@@ -4,7 +4,6 @@
 	box-sizing: border-box;
 }
 
-
 body {
     position: absolute;
 	width: 80vw;
@@ -35,6 +34,7 @@ article {
 	transform: translateY(-40%);
 	border-left: 3px solid black;
 	border-right: 3px solid black;
+	overflow: visible !important;
 }
 
 article .quote-body {
