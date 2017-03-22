@@ -51,6 +51,21 @@ article h2.quote-author {
 	text-align: right;
 }
 
+.get-quote .new-btn i {
+	cursor: pointer;
+	font-size: 5em;
+}
+
+.get-quote .new-btn i:hover {
+	color: #ffbf00;
+    text-shadow: 0px 0px 8px #ffce3c;
+}
+
+.get-quote .new-btn i:active {
+    color: #ffbe00;
+    text-shadow: none;
+}
+
 main .get-quote,
 footer .credit {
 	text-align: center;
