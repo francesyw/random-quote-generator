@@ -7,6 +7,7 @@ $( document ).ready( readyFn );
 function readyFn(jQuery) {
 	getQuote();
 	$(".new-btn i").on("click", getQuote);
+	socialShare();
 };
 
 // Get random quotes from api
@@ -50,4 +51,27 @@ function borderAnimation() {
 		});
 	}
 	articleHeight = $newArticleHeight;
+}
+
+// Social share links
+function socialShare() {
+	href='';
+	$(".social-links a").on("click", function() {
+		switch ($(this).attr('id')) {
+			case 'facebook':
+				href='https://www.facebook.com/sharer/sharer.php?u=http%3A//francesyw.com/thought-for-the-day/'
+				break;
+			case 'twitter':
+				href='https://twitter.com/home?status=Thought%20for%20the%20day%20-%0A%20http%3A//francesyw.com/thought-for-the-day/'
+				break;
+			case 'tumblr':
+				href='http://www.tumblr.com/share/link?url=http%3A%2F%2Ffrancesyw.com%2Fthought-for-the-day%2F&name=Thought%20for%20the%20day'
+				break;
+			case 'linkedin':
+				href='https://www.linkedin.com/shareArticle?mini=true&url=http%3A//francesyw.com/thought-for-the-day/&title=Thought%20for%20the%20day&summary=&source='
+				break;
+		}
+		window.open(href, 'share', 'width=600, height=400');
+		return false;
+	});
 }
